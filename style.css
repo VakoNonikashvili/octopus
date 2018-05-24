@@ -261,6 +261,15 @@ body {
     .left-header .primary {
         margin-bottom: 1.5rem;
     }
+
+    .main-heading {
+        font-size:27px;
+        width: 100%;
+    }
+
+    .header-image {
+        width: 30rem;
+    }
 }
 /*------------------------*/
 /*--------Main-Seciton---------*/
@@ -524,6 +533,27 @@ body {
     }
 }
 
+@media only screen and (max-width: 440px) {
+    .main-content h1 {
+        width: 100%;
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .main-content {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    .main-column .col-paragraph {
+        width: 80%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
 /*------------------------*/
 /*--------Safety---------*/
 /*------------------------*/
@@ -681,6 +711,22 @@ body {
     }
 }
 
+@media only screen and (max-width: 665px) {
+    .safety-right {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .safety-right {
+        width: 100%;
+    }
+
+    .white-heading {
+        font-size: 25px;
+    }
+}
+
 /*------------------------*/
 /*--------tracking---------*/
 /*------------------------*/
@@ -761,6 +807,20 @@ body {
     }
 }
 
+@media only screen and (max-width: 440px) {
+    #tracking {
+        padding: 4rem 0 5rem;
+    }
+
+    .chart-container {
+        width: 32rem;
+    }
+
+    .chart-btn {
+        font-size: 12px;
+    }
+}
+
 
 /*------------------------*/
 /*--------Availability---------*/
@@ -838,6 +898,13 @@ body {
     .av-right hr {
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 435px) {
+    .av-row > img {
+        width: 30rem;
+        height: auto;
     }
 }
 
@@ -960,15 +1027,27 @@ body {
     }
 }
 
+@media only screen and (max-width: 700px) {
+    .contact-input {
+        width: 45rem;
+    }
+}
+
 @media only screen and (max-width: 535px) {
     .contact-input {
-        width: 38rem;
+        width: 30rem;
     }
 
-    .contact-row > div > * {
+    .contact-row .contact-heading {
         text-align: center;
-        padding-left: 10%;
-        padding-right: 10%;
+        width: 100%;
+        font-size: 27px;
+    }
+
+    .contact-row .contact-paragraph {
+        text-align: center;
+        width: 100%;
+        font-size: 14px;
     }
 }
 
@@ -1041,3 +1120,108 @@ footer {
         display: none;
     }
 }
+
+.left-header {
+    backface-visibility: visible !important;
+    animation: flipInY 1.2s;
+  }
+
+
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  
+  @keyframes bounceIn {
+    from,
+    20%,
+    40%,
+    60%,
+    80%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    20% {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+  
+    40% {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  
+    60% {
+      opacity: 1;
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+  
+    80% {
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+  
+    to {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .header-image {
+    animation-duration: 1s;
+    animation-name: bounceIn;
+  }
+
+  @keyframes flipInY {
+    from {
+      transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+  
+    40% {
+      transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+      opacity: 1;
+    }
+  
+    80% {
+      transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+  
+    to {
+      transform: perspective(400px);
+    }
+  }
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  #navbar {
+      animation: fadeIn 1.2s;
+  }
+
